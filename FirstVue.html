@@ -1,0 +1,34 @@
+<html lang="en">
+
+<head>
+  <title>Getting to know Vue.js</title>
+</head>
+
+<body>
+  <script src="https://unpkg.com/vue"></script>
+  <div id="app">{{ propertyName }}</div>
+  <script src="https://unpkg.com/vue"></script>
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        propertyName: 'Hello World!'
+      }
+    });
+  </script>
+  <div id="greet">
+    <p v-if="hours<12">Good Morning</p>
+    <p v-if="hours>=12&&hours<18">Good Afternoon</p>
+    <p v-if="hours>=18">Good Evening</p>
+  </div>
+  <script>
+    new Vue({
+      el: '#greet',
+      data: {
+        hours: new Date().getHours()
+      }
+    });
+  </script>
+</body>
+
+</html>
